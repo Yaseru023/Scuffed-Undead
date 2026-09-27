@@ -1,0 +1,53 @@
+{
+	"loader": "forge:separate-perspective",
+	"base":
+	{
+		"loader": "forge:obj",
+  		"model": "darksouls:models/item/obj/demon_great_hammer.obj",
+  		"flip-v": true,
+  		"materialLibraryOverride": "demon_great_hammer.mtl",
+		"display":
+  		{
+    		"thirdperson_righthand":
+    		{
+      			"translation": [10.5, -5, 11.5],
+      			"rotation": [86, 0, 0],
+      			"scale": [1.3, 1.3, 1.3]
+    		},
+    		"firstperson_righthand":
+    		{
+      			"translation": [70, -30, 0],
+      			"rotation": [75, 0, 0],
+      			"scale": [5.0, 5.0, 5.0]
+    		}
+  		}
+	},
+	"perspectives":
+	{
+		"ground":
+		{
+			"parent": "item/generated",
+			"textures":
+			{
+				"layer0": "darksouls:items/demon_great_hammer"
+			}
+		},
+		"gui":
+		{
+			"parent": "item/generated",
+			"textures":
+			{
+				"layer0": "darksouls:items/demon_great_hammer"
+			},
+			"gui_light": "front"
+		},
+		"fixed":
+		{
+			"parent": "item/generated",
+			"textures":
+			{
+				"layer0": "darksouls:items/demon_great_hammer"
+			}
+		}
+	}
+}

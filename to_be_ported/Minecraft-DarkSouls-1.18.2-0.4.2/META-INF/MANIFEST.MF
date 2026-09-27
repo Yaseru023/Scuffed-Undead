@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: Minecraft: Dark Souls
+Specification-Vendor: Skullman Games
+Specification-Version: 1
+Implementation-Title: Dark Souls
+Implementation-Version: 1.0
+Implementation-Vendor: Skullman Games
+Implementation-Timestamp: 2023-04-10T13:13:05+0200
+
