@@ -1,0 +1,13 @@
+{
+  "type": "scuffedundead:log_stripping",
+  "axe": {
+    "tag": "forge:tools/axes"
+  },
+  "log": {
+    "item": "minecraft:dark_oak_log"
+  },
+  "result": {
+    "item": "minecraft:dark_oak_planks",
+    "count": 4
+  }
+}

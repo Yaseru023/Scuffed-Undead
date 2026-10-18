@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "scuffedundead:item/steel_lockpick_blade"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "jumbofurnace:jumbo_smelting",
+  "ingredients": [
+    { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:iron_ingot" },
+    { "tag": "minecraft:coals" },
+    { "tag": "minecraft:coals" },
+    { "tag": "minecraft:coals" },
+    { "tag": "minecraft:coals" }
+  ],
+  "result": { "item": "mcore:steel_scrap" },
+  "experience": 0.35
+}

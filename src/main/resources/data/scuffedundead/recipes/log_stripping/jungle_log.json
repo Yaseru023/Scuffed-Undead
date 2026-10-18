@@ -1,0 +1,13 @@
+{
+  "type": "scuffedundead:log_stripping",
+  "axe": {
+    "tag": "forge:tools/axes"
+  },
+  "log": {
+    "item": "minecraft:jungle_log"
+  },
+  "result": {
+    "item": "minecraft:jungle_planks",
+    "count": 4
+  }
+}

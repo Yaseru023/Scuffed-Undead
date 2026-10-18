@@ -1,0 +1,13 @@
+{
+  "type": "scuffedundead:log_stripping",
+  "axe": {
+    "tag": "forge:tools/axes"
+  },
+  "log": {
+    "item": "minecraft:spruce_log"
+  },
+  "result": {
+    "item": "minecraft:spruce_planks",
+    "count": 4
+  }
+}
