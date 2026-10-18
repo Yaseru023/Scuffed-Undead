@@ -26,7 +26,6 @@ public class VillagerTradeEvents {
     /** Payouts the player RECEIVES from villagers: 1 = same number of scrap as the old emeralds. */
     private static final int PAYOUT_MULTIPLIER = 1;
 
-    // LOWEST priority so trades added by other mods' listeners are already in the list.
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onVillagerTrades(VillagerTradesEvent event) {
         event.getTrades().values().forEach(list -> list.replaceAll(VillagerTradeEvents::wrap));
@@ -57,8 +56,8 @@ public class VillagerTradeEvents {
 
     private static ItemStack swap(ItemStack stack, Item currency, int multiplier) {
         if (!stack.is(Items.EMERALD)) return stack;
-        // a trade slot can't hold more than one stack, so cap at the item's max stack size
         int count = Math.min(stack.getCount() * multiplier, currency.getMaxStackSize());
         return new ItemStack(currency, count);
     }
+    //yeet
 }
