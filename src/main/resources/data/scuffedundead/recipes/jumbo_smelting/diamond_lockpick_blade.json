@@ -1,0 +1,10 @@
+{
+  "type": "jumbofurnace:jumbo_smelting",
+  "ingredients": [
+    { "item": "realisticforging:diamondshards" },
+    { "item": "scuffedundead:steel_lockpick_blade" },
+    { "item": "realisticforging:diamondshards" }
+  ],
+  "result": { "item": "scuffedundead:diamond_lockpick_blade" },
+  "experience": 0.35
+}

@@ -1,0 +1,10 @@
+{
+  "type": "jumbofurnace:jumbo_smelting",
+  "ingredients": [
+    { "item": "mcore:steel_nugget" },
+    { "item": "scuffedundead:iron_lockpick_blade" },
+    { "item": "mcore:steel_nugget" }
+  ],
+  "result": { "item": "scuffedundead:steel_lockpick_blade" },
+  "experience": 0.35
+}

@@ -1,0 +1,10 @@
+{
+  "type": "jumbofurnace:jumbo_smelting",
+  "ingredients": [
+    { "item": "minecraft:netherite_scrap" },
+    { "item": "scuffedundead:diamond_lockpick_blade" },
+    { "item": "minecraft:netherite_scrap" }
+  ],
+  "result": { "item": "scuffedundead:netherite_lockpick_blade" },
+  "experience": 0.35
+}

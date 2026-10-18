@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BA",
+    "CB"
+  ],
+  "key": {
+    "A": {
+      "item": "scuffedundead:diamond_lockpick_blade"
+    },
+    "B": {
+      "item": "tkvm_weapons:leather_strip"
+    },
+    "C": {
+      "item": "realisticforging:rawwoodhandle"
+    }
+  },
+  "result": {
+    "item": "scuffedundead:diamond_lockpick",
+    "count": 1
+  }
+}
