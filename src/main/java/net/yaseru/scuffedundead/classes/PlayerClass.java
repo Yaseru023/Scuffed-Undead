@@ -139,6 +139,8 @@ public enum PlayerClass {
             "Knows every cave and is deeply uncomfortable above ground. Digs first, asks questions never.\n\n§6Prospector's Luck: §720% chance of extra drops from ores.\n\n§6Tunnel Rat: §7Mine faster while underground.",
             "%s is now a Miner.",
             () -> List.of(
+                    gun("tacz:1873", "SEMI", 16),                  // PLACEHOLDER gun
+                    ammoBox("tacz:44_40", 144),
                     item("minecraft:iron_pickaxe", 1),
                     item("minecraft:torch", 32),
                     itemNbt("vfl:helmet_miners", 1,
@@ -168,8 +170,18 @@ public enum PlayerClass {
                     item("farmersdelight:chicken_sandwich", 32),
                     item("marbledsmelees:machete", 1))),
 
+    LOCKSMITH("Locksmith",
+            "Totally licensed, definitely not here for the chests.\n§6Light Fingers: §750% chance a lockpick doesn't wear down when it opens a lock.\n§6Scavenge: §720% chance for an extra drop from hostile mobs you kill.",
+            "%s is now a Locksmith. Please don't ask whose door that was.",
+            () -> List.of(
+                    item("scuffedundead:steel_lockpick", 1),
+                    item("scuffedundead:steel_lockpick", 1),
+                    item("sona:crowbar", 1),                  // PLACEHOLDER, check Sona's real ID
+                    gun("tacz:glock_17", "SEMI", 17),         // PLACEHOLDER gun
+                    ammoBox("tacz:9mm", 144))),               // PLACEHOLDER ammo
+
     OTAKU("Otaku",
-            "Learned everything from anime and nothing from practice. Swings a sword with far too much confidence.\n\n§6Bucket List: §7Melee kills in a row stack Speed.\n\n§6Opening Strike: §7Your first hit after a pause deals bonus damage.\n\n§6Nihon Enthusiast: §7Has read every volume. Japanese blades hit harder in your hands.",
+            "Learned everything from anime and nothing from practice. Swings a sword with far too much confidence.\n\n§6Opening Strike: §7Your first hit after a pause deals bonus damage.\n\n§6Nihon Enthusiast: §7Has read every volume. Japanese blades hit harder in your hands.",
             "%s is now an Otaku.",
             () -> List.of(
                     itemNbt("oyoroi:iron_suji_kabuto_crescent", 1,
@@ -185,7 +197,7 @@ public enum PlayerClass {
                             "{'legendarysurvivaloverhaul:HydrationCapacity':9,'legendarysurvivaloverhaul:HydrationPurity':'purified'}"),
                     item("farmersdelight:chicken_sandwich", 32))),
 
-    LARPER("LARPer",
+    LARPER("Knight",
             "Showed up to the apocalypse in full plate armor. Thankfully he was in a museum when the outbreak happened.\n\n§6Iron Will: §7More armor means less damage taken.\n\n§6Medieval Might: §7Holding a medieval weapon grants Resistance.",
             "%s is now a LARPer.",
             () -> List.of(

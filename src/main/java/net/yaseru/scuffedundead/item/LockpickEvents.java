@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -15,18 +16,28 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.yaseru.scuffedundead.ScuffedUndead;
+import net.yaseru.scuffedundead.classes.ClassData;
+import net.yaseru.scuffedundead.classes.PlayerClass;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * When a player uses a lockpick on a LOCKED container and the container ends up unlocked,
+ * the lockpick loses 1 durability.
+ *
+ * It works by watching the container's own lock data (seen with /data get block):
+ *   ForgeData.LockFlag (1b = locked)  and  Lock (a UUID string).
+ */
 @Mod.EventBusSubscriber(modid = ScuffedUndead.MOD_ID)
 public class LockpickEvents {
 
     private static final String LOCK_FLAG = "LockFlag"; // inside the block entity's ForgeData
     private static final String LOCK = "Lock";          // vanilla lock string
     private static final int WATCH_TICKS = 40;          // how long to wait for the lock to open (2s)
+    private static final float LIGHT_FINGERS_CHANCE = 0.50f; // Locksmith: chance a lockpick isn't worn down
 
     private record Watch(ServerLevel level, BlockPos pos, UUID player, long start) {}
 
@@ -74,6 +85,13 @@ public class LockpickEvents {
     private static void wearDown(ServerLevel level, Watch watch) {
         ServerPlayer player = level.getServer().getPlayerList().getPlayer(watch.player());
         if (player == null) return;
+
+        // Locksmith passive "Light Fingers": sometimes the lockpick isn't worn down at all
+        if (ClassData.get(player).orElse(null) == PlayerClass.LOCKSMITH
+                && player.getRandom().nextFloat() < LIGHT_FINGERS_CHANCE) {
+            player.displayClientMessage(Component.literal("§bLight fingers!"), true);
+            return;
+        }
 
         ItemStack stack = player.getMainHandItem();
         if (!(stack.getItem() instanceof LockpickItem)) return; // switched items or it was already used up
